@@ -1,0 +1,37 @@
+<%- include('partials/header'); -%>
+
+<!-- Custom styles for this template -->
+<link href="/css/home.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    
+    <main class="form-signin">
+      <form action="/activity" method="post">
+        <img class="mb-4" src="images/restaurant.svg" alt="restaurant" width="250" height="auto">
+        <h1 class="h3 mb-3 fw-normal">Destination Planner</h1>
+  
+        <div class="form-floating">
+          <label for="cityInput">City: </label>
+          <input class="form-control" type="text" id="cityInput" name="cityName" placeholder="US City"required>
+        </div>
+        <div class="form-floating">
+          <label for="stateInput">State: </label>
+          <input class="form-control" type="text" id="stateInput" name="stateName" placeholder="US State" required>
+        </div>
+        <br>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" name="btn" value="activity">Search</button>
+        <br>
+        <button class="w-100 btn btn-lg btn-warning" type="submit" name="btn" value = "indoor">Indoor</button>
+        <br>
+        <button class="w-100 btn btn-lg btn-danger" type="submit"name ="btn" value="outdoor">Outdoor</button>
+        <br>
+        <% var year = new Date().getFullYear(); %>
+        <footer>
+          <p class="mt-5 mb-3 text-muted">&copy; Nicolas Garcia Rosell <%= year %> </p>
+        </footer>
+      </form>
+    </main>
+  
+  </body>
+  </html>
