@@ -1,30 +1,7 @@
 //jshint esversion:6
 
-/* 
-GOALS (Maybe use a different API(i.e Players goals for the season))
-1. switch entire background depending on the weather
-2. Create css to look nicer/ use bootstrap
-3. Get more information on weather!
-4. Implement more than one API
-    * yelp api
-    * openWeather api 
-    * weather-js api (use this instead) 
-    * check out tomorrow.io
-    *** LOOK UP DOCUMENTATION TO SEE WHAT MORE INFORMATION THE APIS CAN GIVE
-        
-*/
-
-/* 
-GOAL OF CODE
-
-    Given a city name, return the temp and weather. 
-    Depending on the weather 
-        1. Change background to match the weather 
-        2. Suggest either indoor or outdoor activities.
-        3. Take user to new route showing possible activities 
-        4. 
-
-*/
+// GOAL: Use APIs to either return indoor or outdoor activities
+// depending on the area's weather
 
 // in order to use import we need "type": "modules" in package.json
 import {} from 'dotenv/config'
@@ -35,11 +12,6 @@ const app = express();
 app.use(express.static('public'))
 // need for rendering EJS templates from views folder
 app.set('view engine', 'ejs');
- 
-import https from "https"
-
-// const weather = require('openweather-apis');
-// weather.setAPPID(process.env.WEATHER_API_KEY);
 
 import weather from "weather-js";
 
@@ -49,13 +21,6 @@ const client = yelp.client(process.env.YELP_API_KEY);
 
 import bodyParser from "body-parser";
 app.use(bodyParser.urlencoded({extended: true}));
-
-// __dirname cannot be used when "type": "modules" in package.json
-import path from 'path';
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 
 app.get("/",function(req,res){
     res.render("home")

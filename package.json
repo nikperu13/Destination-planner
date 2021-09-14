@@ -12,16 +12,12 @@
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "https": "^1.0.0",
-    "openweather-apis": "^4.4.2",
-    "path": "^0.12.7",
-    "url": "^0.11.0",
     "weather-js": "^2.0.0",
     "yelp-fusion": "^3.0.0"
   },
   "devDependencies": {},
   "scripts": {
-    "start":"node app.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC"
